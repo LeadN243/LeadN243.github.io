@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const featured = [
+  {
+    title: "Energy System Model — Portugal (PyPSA)",
+    description: "Sector coupling model experiments, scenario analysis, and visualizations.",
+    href: "/projects/pypsa-portugal/",
+    tags: ["Python", "PyPSA", "Optimization"]
+  },
+  {
+    title: "PV Tilt Optimization — Germany",
+    description: "Angle optimization workflow + plots + reproducible notebook exports.",
+    href: "/projects/pv-tilt-germany/",
+    tags: ["Python", "Data", "GIS"]
+  },
+  {
+    title: "Process Simulation — H2 / NH3 integration",
+    description: "Aspen-based sensitivity studies and design trade-offs.",
+    href: "/projects/h2-nh3-integration/",
+    tags: ["Aspen", "Thermo", "Process"]
+  },
+];
+---
+<BaseLayout
+  title="Your Name — Academic Portfolio"
+  description="Master’s student portfolio: research, projects, simulations, visuals, and publications."
+>
+  <section class="hero">
+    <h1>Your Name</h1>
+    <p>
+      M.Sc. student in Engineering. I build models and simulations for energy/process systems
+      and document results with clean, reproducible visuals.
+    </p>
+    <p>
+      <a href="/cv/">View CV</a> ·
+      <a href="https://github.com/YOUR_GITHUB_USERNAME">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/">LinkedIn</a>
+    </p>
+  </section>
+
+  <h2>Featured projects</h2>
+  <div class="grid">
+    {featured.map(p => (
+      <article class="card">
+        <h3><a href={p.href}>{p.title}</a></h3>
+        <p>{p.description}</p>
+        <div>
+          {p.tags.map(t => <span class="tag">{t}</span>)}
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <h2 style="margin-top:24px;">What I’m looking for</h2>
+  <div class="card">
+    <ul>
+      <li>Master’s thesis / research collaborations</li>
+      <li>Working student or internship roles in energy/process modeling</li>
+      <li>Projects involving optimization, simulation, and data-driven analysis</li>
+    </ul>
+  </div>
+</BaseLayout>
